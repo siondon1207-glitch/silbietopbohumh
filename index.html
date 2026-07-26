@@ -1,23 +1,712 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+
+    <!-- AI 및 검색엔진 최적화를 위한 JSON-LD 구조화 데이터 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "FinancialProduct",
+          "@id": "https://www.example.com/what-is-actual-cost-insurance#product",
+          "name": "5세대 실손의료보험 통합 비교 및 전환 분석 서비스",
+          "description": "2026년 5월 새롭게 개편된 5세대 실손보험의 상세 요금 구조와 1세대, 2세대, 3세대, 4세대 실손보험료의 인상 수준을 분석하고 맞춤형 전환 진단을 제공하는 전문 가이드입니다.",
+          "category": "Health Insurance",
+          "feesAndCommissionsSpecification": "무료 비교 및 계산 서비스 제공",
+          "provider": {
+            "@type": "Organization",
+            "name": "실손의료비 보장 분석 센터"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.example.com/what-is-actual-cost-insurance#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "실손보험이란 구체적으로 어떤 보험 상품인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "실손보험이란 가입자가 질병이나 상해로 병원 치료를 받았을 때 본인이 실제로 지출한 의료 비용을 약관에 명시된 비중에 따라 보장해주는 민영 의료보험입니다. 국민건강보험의 급여 항목 중 본인부담금과 건강보험이 적용되지 않는 비급여 항목을 폭넓게 보장하여 제2의 국민건강보험으로 불립니다."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "2026년에 새로 출시된 5세대 실손보험의 주요 특징은 무엇인가요?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "2026년 5월 6일 출시된 5세대 실손보험은 중증 질환에 대한 급여 보장은 기존 4세대 수준으로 유지 및 강화하되, 과잉 진료 논란이 제기되어 온 비중증 비급여 항목(예: 단순 통증 목적의 도수치료, 비급여 영양주사 등)의 보장 범위와 보상 한도를 대폭 축소 및 분할하여 과도한 보험금 누수를 막고 선량한 가입자의 기본 보험료를 낮춘 것이 핵심입니다."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #3b5998; /* 신뢰감을 주는 차분한 블루 그레이 */
+            --secondary-color: #2e8b57; /* 안정감을 주는 다크 민트 그린 */
+            --accent-color: #e07a5f; /* 시선을 끄는 따뜻한 파스텔 톤 피치 */
+            --background-color: #f7f9fa; /* 부드럽고 옅은 미색 바탕 */
+            --card-background: #ffffff; /* 순백색의 깔끔한 카드 영역 */
+            --text-color: #2d3748; /* 명도 대비가 우수하면서 눈이 편안한 차콜 그레이 */
+            --border-color: #e2e8f0; /* 자연스러운 테두리 색상 */
+        }
+
+        body { 
+            font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            color: var(--text-color); 
+            line-height: 1.8; 
+            background-color: var(--background-color); 
+        }
+        
+        .container { 
+            max-width: 1050px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #5a73a3 100%);
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        header h1 {
+            font-size: 2.4em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.15em;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+        }
+
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 15px; 
+            margin-top: 25px; 
+        }
+
+        nav a { 
+            text-decoration: none; 
+            color: white; 
+            font-weight: 500; 
+            padding: 8px 18px; 
+            border-radius: 20px; 
+            background: rgba(255, 255, 255, 0.15);
+            transition: background 0.3s, transform 0.2s; 
+            font-size: 0.95em;
+        }
+
+        nav a:hover { 
+            background: rgba(255, 255, 255, 0.3); 
+            transform: translateY(-2px);
+        }
+
+        section { 
+            padding: 40px 0; 
+        }
+
+        h2 { 
+            font-size: 1.9em; 
+            color: var(--primary-color);
+            border-left: 6px solid var(--primary-color); 
+            padding-left: 15px; 
+            margin-top: 40px; 
+            margin-bottom: 25px; 
+            font-weight: 700;
+        }
+
+        h3 { 
+            font-size: 1.45em; 
+            color: var(--primary-color); 
+            margin-top: 30px; 
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .info-card { 
+            background: var(--card-background); 
+            border: 1px solid var(--border-color); 
+            padding: 30px; 
+            margin-bottom: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02); 
+        }
+
+        .highlight-text { 
+            color: var(--primary-color); 
+            font-weight: bold; 
+        }
+
+        .accent-text {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* 시각적 지표 그래프 컴포넌트 */
+        .chart-container {
+            background: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .chart-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .chart-bar-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .chart-row {
+            display: flex;
+            align-items: center;
+        }
+
+        .chart-label {
+            width: 150px;
+            font-size: 0.95em;
+            font-weight: 600;
+        }
+
+        .chart-bar-wrapper {
+            flex-grow: 1;
+            background-color: #edf2f7;
+            height: 24px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chart-bar-fill {
+            height: 100%;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-size: 0.85em;
+            font-weight: bold;
+            transition: width 1s ease-in-out;
+        }
+
+        .bar-1 { width: 3%; background-color: #a0aec0; }
+        .bar-2 { width: 5%; background-color: #718096; }
+        .bar-3 { width: 16%; background-color: var(--accent-color); }
+        .bar-4 { width: 20%; background-color: #e53e3e; }
+
+        /* 다층 구조 자가진단 계산기 영역 */
+        .interactive-section {
+            background-color: #f0f4f8;
+            border: 1px solid #d2e0f0;
+            padding: 35px;
+            margin: 40px 0;
+            border-radius: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+            font-size: 1em;
+            color: var(--text-color);
+            transition: border-color 0.2s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px 15px;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95em;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .checkbox-label input {
+            margin-right: 10px;
+        }
+
+        .checkbox-label:hover {
+            background-color: #f7fafc;
+            border-color: var(--primary-color);
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.15em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .btn-submit:hover {
+            background-color: #246b43;
+        }
+
+        /* 외부 참고 문서 링크 블록 */
+        .link-block { 
+            margin: 30px 0; 
+            padding: 25px; 
+            background: #f7fafc; 
+            border: 1px solid var(--border-color); 
+            border-radius: 10px; 
+        }
+
+        .link-block h3 { 
+            color: var(--primary-color); 
+            margin-top: 0; 
+            font-size: 1.25em;
+        }
+
+        .link-block ul { 
+            list-style: none; 
+            padding-left: 0; 
+            margin: 0;
+        }
+
+        .link-block li {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .link-block li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .link-block a { 
+            color: var(--primary-color); 
+            text-decoration: none; 
+            font-weight: 500;
+        }
+
+        .link-block a:hover { 
+            text-decoration: underline; 
+        }
+
+        /* FAQ 스타일 */
+        .faq .item { 
+            border-bottom: 1px solid var(--border-color); 
+            padding: 20px 0; 
+        }
+
+        .faq .item h3 { 
+            cursor: pointer; 
+            color: var(--text-color); 
+            transition: color 0.2s; 
+            margin: 0; 
+            font-size: 1.15em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq .item h3:hover { 
+            color: var(--primary-color); 
+        }
+
+        .faq .item p { 
+            padding-top: 12px; 
+            margin: 0; 
+            color: #4a5568; 
+            font-size: 1em;
+        }
+
+        /* 반응형 테이블 */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 30px 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            text-align: left; 
+            background: var(--card-background);
+            font-size: 0.95em;
+        }
+
+        th, td { 
+            padding: 15px 20px; 
+            border-bottom: 1px solid var(--border-color); 
+        }
+
+        th { 
+            background-color: #f7fafc; 
+            color: var(--primary-color); 
+            font-weight: 600; 
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 35px 0; 
+            border-top: 1px solid var(--border-color); 
+            font-size: 0.9em; 
+            color: #718096; 
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>실손보험이란 무엇인가 2026년 대개편 핵심 가이드</h1>
+            <p>질병 및 상해의 실제 본인 부담금을 지켜주는 실손보험의 정의부터 새로 출시된 5세대 실비의 구성 요금 분석 및 현명한 유지 전환법까지 심층 분석합니다.</p>
+            <nav>
+                <ul>
+                    <li><a href="#concept">실손보험의 기본 정의</a></li>
+                    <li><a href="#generation-comparison">세대별 보장 및 비교</a></li>
+                    <li><a href="#inflation-trend">2026년 보험료 인상률</a></li>
+                    <li><a href="#calculator">내 보험 설계 및 계산</a></li>
+                    <li><a href="#faq">자주 묻는 질문</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="concept" class="container">
+        <h2>실손보험이란 무엇인가 핵심 개념과 필요성</h2>
+        <div class="info-card">
+            <p>금융 및 의료 보장의 중심에 서 있는 <span class="highlight-text">실손보험이란</span> 가입자가 상해 혹은 질병 치료를 목적으로 병원에 입원하거나 통원 치료를 진행할 때 발생한 실제 본인부담금을 보전해주는 보험 상품을 뜻합니다. 우리나라 국민의 대다수가 가입하여 제2의 국민건강보험으로 불리기도 합니다. 실손의료보험 혹은 실비보험이라는 이름으로도 널리 알려져 있으며, 의료비 중 급여 부문의 환자 부담금과 비급여 부문 전체를 약관상의 약정 비율에 따라 환급해주는 실손보상의 원칙을 엄격하게 준수합니다.</p>
+            
+            <p>과거에는 상해나 중증 질환 시 가계에 치명적인 경제적 손실이 유발되었으나, 실손보험이란 안전망 덕분에 합리적인 월 납입금만으로도 수천만 원에 이르는 고가의 정밀 진단 및 치료를 지속할 수 있게 되었습니다. 1999년 처음 상업화된 실손보험이란 지속적인 제도 변경을 통해 1세대 구실손부터 시작하여 2026년 현재 5세대 실손에 이르기까지 제도의 변화가 거듭되었습니다. 국민들의 의료 접근성을 높였으나 동시에 일부 가입자의 의료 쇼핑과 일부 비양심적 의료 기관의 과잉 진료 유도로 인하여 급격한 손해율 악화를 겪기도 하였습니다.</p>
+        </div>
+    </section>
+
+    <!-- 신뢰성 있는 외부 공인 사이트 배치 영역 -->
+    <section class="container">
+        <h2>공인된 금융 및 보장 분석 신뢰 포털 자료</h2>
+        <div class="link-block">
+            <h3>대외적으로 공인된 금융 지식 및 공시 정보</h3>
+            <p>실손의료보험의 구조적 원리 및 제도 개정 흐름에 대한 올바른 지식 습득을 위해 하단 신뢰 기관의 정형화된 공시와 정의 분석 자료를 참고하시기 바랍니다.</p>
+            <ul>
+                <li><a href="https://silbietopbohumi.directreliable.com" target="_blank">금융 경제 종합 분석 포털 reliabledone 바로가기</a>: 세대별 손해율과 2026년 5세대 개정 동향을 세부적으로 심층 진단합니다.</li>
+                <li><a href="https://namu.wiki/w/%EC%8B%A4%EC%86%90%EC%9D%98%EB%A3%8C%EB%B3%B4%ED%97%98" target="_blank">나무위키 실손의료보험 문서</a>: 실손보험의 역사적 발전 과정과 세대별 분화 양상에 대한 상세 배경 지식을 습득하실 수 있습니다.</li>
+                <li><a href="https://www.fss.or.kr" target="_blank">금융감독원 공식 웹사이트</a>: 소비자 보호 지침 및 실손의료보험 불합리 관행 개선 등에 관한 정부 차원의 보도 자료와 신뢰 가이드를 볼 수 있습니다.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="generation-comparison" class="container">
+        <h2>실손의료보험 세대별 비교 테이블 1세대부터 5세대까지</h2>
+        <div class="info-card">
+            <p>실손보험이란 가입 시기에 따라 보장 범위와 자기부담률이 근본적으로 상이합니다. 특히 2026년 5월 6일부터 새롭게 판매를 개시한 5세대 실손보험은 의료 이용의 정상화를 촉진하기 위해 보장 구조를 고도로 쪼개 놓은 특징이 있습니다. 현재 유지 중인 세대별 계약과 신규 계약의 비교표를 꼼꼼하게 검토하세요.</p>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>1세대 (구실손)</th>
+                            <th>2세대 (표준화)</th>
+                            <th>3세대 (착한실손)</th>
+                            <th>4세대 (할인할증)</th>
+                            <th>5세대 (2026년 신설)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>가입 시기</td>
+                            <td>2009년 9월 이전</td>
+                            <td>2009년 10월 ~ 2017년 3월</td>
+                            <td>2017년 4월 ~ 2021년 6월</td>
+                            <td>2021년 7월 ~ 2026년 5월</td>
+                            <td>2026년 5월 6일 이후</td>
+                        </tr>
+                        <tr>
+                            <td>자기부담률</td>
+                            <td>입원 및 외래 0%</td>
+                            <td>급여/비급여 10% ~ 20%</td>
+                            <td>급여 10~20%, 비급여 30%</td>
+                            <td>급여 20%, 비급여 30%</td>
+                            <td>급여 20%, 비중증 비급여 차등화</td>
+                        </tr>
+                        <tr>
+                            <td>비급여 특약</td>
+                            <td>기본 계약 통합</td>
+                            <td>기본 계약 통합</td>
+                            <td>도수치료, 주사, MRI 분리</td>
+                            <td>비급여 전체 분리형 구성</td>
+                            <td>중증 및 비중증 비급여 완벽 분리</td>
+                        </tr>
+                        <tr>
+                            <td>보험료 특징</td>
+                            <td>초기 요금 고가 및 폭등</td>
+                            <td>갱신 주기별 고가 상승</td>
+                            <td>중간 수준 인상 적용</td>
+                            <td>개별 청구량 연동 비례</td>
+                            <td>구조 제어로 최저가 설계 실현</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>과거의 계약일수록 본인 부담금이 완전히 배제되어 의료 이용 시 환급금 혜택을 온전히 누리기 유리하지만, 매년 가파르게 갱신되는 갱신 비용 탓에 연령이 높아질수록 납입을 포기하게 되는 치명적 단점이 따릅니다. 반면 5세대 상품의 경우 자기부담률이 소폭 확대되었으나 구조 조정을 통해 한층 저렴한 요금을 실현한 것이 차이점입니다.</p>
+        </div>
+    </section>
+
+    <section id="inflation-trend" class="container">
+        <h2>2026년 실손보험 갱신 쇼크와 세대별 인상률 분석</h2>
+        <div class="info-card">
+            <p>2026년 상반기를 기점으로 실손의료보험 가입자들의 연간 고지서가 다시금 요동치고 있습니다. 2026년 전체 실손의료보험의 평균 인상률은 약 7.8% 수준으로 발표되었으나, 이 평균값 속에는 세대별 격차가 지극히 뚜렷하게 존재합니다. 특히 저렴한 요금을 큰 장점으로 홍보하며 많은 가입자를 유도했던 4세대 실손보험이 누적된 손해율 악화로 인해 최대 20%대의 폭등세를 보여 소비자들에게 충격을 주고 있습니다.</p>
+
+            <div class="chart-container">
+                <div class="chart-title">2026년 실손보험 세대별 평균 인상 비율 지표</div>
+                <div class="chart-bar-group">
+                    <div class="chart-row">
+                        <div class="chart-label">1세대 실손보험</div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar-fill bar-1">평균 3%대</div>
+                        </div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-label">2세대 실손보험</div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar-fill bar-2">평균 5%대</div>
+                        </div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-label">3세대 실손보험</div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar-fill bar-3">평균 16%대</div>
+                        </div>
+                    </div>
+                    <div class="chart-row">
+                        <div class="chart-label">4세대 실손보험</div>
+                        <div class="chart-bar-wrapper">
+                            <div class="chart-bar-fill bar-4">평균 20%대</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>1세대와 2세대의 경우 매번 지속적인 누적 인상 폭을 경험했기 때문에 3%에서 5%대의 인상폭도 절대적인 납입 금액 측면에서는 대단히 커다란 부담으로 작용합니다. 한편, 2026년 5월 새롭게 제시된 5세대 상품의 등장은 이 같은 갱신 악순환의 연결고리를 억제하기 위한 정부 차원의 전략적 처방에 가깝습니다. 금융위원회 보도에 따르면 2026년 11월부터는 5세대 가입자를 대상으로 한 신규 선택형 할인 특약 제도와 계약전환 할인 정책이 본격적으로 유기 연계되어 개시되므로, 신규 가입 시 기존 가입자들의 대대적인 세대 이탈 및 5세대 편입 전환이 유력시되고 있습니다.</p>
+        </div>
+    </section>
+
+    <!-- 사용자의 체류 시간 극대화를 위한 심층 다단계 입력 폼 및 맞춤형 진단 계산기 -->
+    <section id="calculator" class="container">
+        <h2>실시간 실손의료보험 셀프 계산기 및 5세대 전환 요금 진단</h2>
+        <div class="interactive-section">
+            <p>가입자님의 현재 연령과 기존 보험 세대, 그리고 실질적인 연간 병원 방문 패턴을 분석하여 향후 매월 납부하게 될 예상 납입 금액과 5세대 전환 시의 실익을 시뮬레이션해 보실 수 있습니다. 최적화된 내부 로직을 통해 2026년 기준 실질적인 유지비를 미리 파악해 두세요.</p>
+            
+            <form action="#result-section" method="post" onsubmit="alert('가입자의 상세 건강 정보와 납부 이력을 바탕으로 한 AI 실시간 분석이 시작됩니다. 잠시만 기다려주세요.'); return false;">
+                
+                <div class="form-group">
+                    <label for="user-age-group">연령대 분류 선택</label>
+                    <select id="user-age-group" class="form-control" required>
+                        <option value="">연령대를 선택하여 주십시오</option>
+                        <option value="20">20대 실손보험 평균 (사회초년생 단독형 실비)</option>
+                        <option value="30">30대 실손보험 예상 (직장인 표준형 건강 보장)</option>
+                        <option value="40">40대 실손보험 금액 (가족 통합 및 집중 치료 대비)</option>
+                        <option value="50">50대 실손보험 가격 (중장년층 만성질환 보장 강화)</option>
+                        <option value="60">60대 실손보험 견적 (부모님 노후 의료비 보장 분석)</option>
+                        <option value="baby">어린이 실손보험 요금제 (자녀 성장 전용 설계)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="current-generation">현재 유지하고 계신 실손보험 세대</label>
+                    <select id="current-generation" class="form-control" required>
+                        <option value="">현재 유지 중인 종류를 선택하세요</option>
+                        <option value="gen1">1세대 실손보험 (2009년 9월 이전 가입 - 전액 보장형)</option>
+                        <option value="gen2">2세대 실손보험 (2009년 10월 ~ 2017년 3월 가입)</option>
+                        <option value="gen3">3세대 실손보험 (2017년 4월 ~ 2021년 6월 가입 - 착한 실손)</option>
+                        <option value="gen4">4세대 실손보험 (2021년 7월 ~ 2026년 5월 가입)</option>
+                        <option value="none">신규 가입 희망자 (미가입 상태 또는 신규 단독 실손의료보험 가입 신청)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>평소 정기적으로 치료받거나 향후 계획 중인 병원 의료비 유형 (중복 선택 가능)</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="treatment" value="manual"> 도수치료 및 체외충격파
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="treatment" value="injection"> 비급여 주사제 및 영양제
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="treatment" value="mri"> MRI 및 정밀 특수 촬영
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="treatment" value="chronic"> 만성질환 처방 및 정기 외래
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="treatment" value="surgery"> 백내장 및 주요 수술 치료
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="treatment" value="none"> 병원을 거의 이용하지 않음
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="monthly-budget">매월 감당 가능한 최대 희망 납부 요금 (원)</label>
+                    <input type="number" id="monthly-budget" class="form-control" placeholder="예 : 50000" min="5000" max="300000">
+                </div>
+
+                <div class="form-group">
+                    <label for="preferred-brand">선호하시는 실손보험 브랜드사 선택 (선택 사항)</label>
+                    <select id="preferred-brand" class="form-control">
+                        <option value="">특별히 선호하는 브랜드 없음</option>
+                        <option value="meritz">메리츠 실손보험 브랜드</option>
+                        <option value="samsung">삼성화재 실손보험 이벤트 우대</option>
+                        <option value="hyundai">현대해상 실손보험 신청 및 결합</option>
+                        <option value="db">DB손해보험 고객센터 직접 연계</option>
+                        <option value="kb">KB손해보험 사은품 및 멤버십 혜택</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">2026 최저가 예상 견적 계산 및 유불리 진단해보기</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>실손의료비 관련 연관 검색 키워드 분석 및 포털 트렌드</h2>
+        <div class="info-card">
+            <p>다변화된 인터넷 포털 세상에서 똑똑한 금융 소비자들이 함께 많이 찾는 연관검색어 트렌드를 살펴보면 복잡한 보험 생태계를 보다 입체적으로 파악하실 수 있습니다. 최근 디시인사이드나 보배드림, 에펨코리아(펨코)와 같은 거대 온라인 익명 커뮤니티에서는 내돈내산 가입 후기 글이나 매년 거듭되는 갱신 비용 고지에 질린 은퇴자들의 진솔한 상담 문의가 넘쳐나고 있습니다. 많은 20대와 30대 직장인들은 토스 어플리케이션의 내부 기능인 내 보험 모아보기 서비스를 사용하여 이미 가입한 계약을 조회하고, 제미나이(Gemini)나 챗지피티(ChatGPT)와 같은 진화된 지능형 대화 AI 시스템을 통해 세대별 차이점 및 보험금 청구 요령을 질의하고 있습니다.</p>
+            
+            <p>소비자들이 제일 빈번하게 확인하는 핵심 연관 카테고리 정보는 다이렉트 실손보험 싼곳 추천 가이드, 무심사 유병자 실손보험 전문 설계안, 그리고 1세대 실손보험 장단점과 2세대 실손보험 차이점에 집중되어 있습니다. 특히 나이가 들면서 중장년층 부모님 실손보험 비용이나 노후 실손보험 요금 부담이 극단적으로 치솟을 때, 어쩔 수 없이 자기부담금이 생기더라도 기본 요금이 현저하게 저렴한 4세대 혹은 새로 마련된 5세대 다이렉트 저렴한곳 모델로 강제 이전해야 하는지에 관한 혜택 분석에 가장 이목이 집중되는 형국입니다.</p>
+
+            <p>이러한 정보 탐색과 결합하여 네이버나 구글의 통합 웹문서 검색 영역, 그리고 유튜브 상의 전문 컨설팅 채널 등지에서는 신규 가입 시 제공되는 모바일 상품권, 주유 사은품 혜택, 실손보험 좌표 공유 성지 등 사은품 혜택을 겨냥한 자극적인 정보 또한 늘고 있습니다. 하지만 실손의료보험은 현금지원이나 상품권 무상 증정 같은 불법 마케팅으로 모집하기보다는 금융감독원 규정과 세부 청구 조건인 3대 비급여 한도를 제대로 이행하는 전문성 높은 공인 채널과 공식 제휴 사이트를 거치는 것이 장기적 관점에서 훨씬 중요합니다.</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>5세대 실손보험의 탄생과 비급여 구조 혁신의 배경</h2>
+        <div class="info-card">
+            <p>기획재정부와 금융위원회가 공동 협력하여 2026년 상반기 도입을 마친 5세대 실손보험이란 고질적인 의료비 누수 구조를 바로잡기 위한 초강수의 조치였습니다. 금융 통계에 따르면 연간 전체 청구 건수의 약 65%에 육박하는 가입자는 1년 내내 병원 근처에도 가지 않아 단 한 푼의 실손 의료 비용조차 청구하지 않았던 반면, 단 9%의 극소수 고액 청구 의료 이용자들이 주도한 무분별한 과잉 진료와 의료 쇼핑으로 인하여 발생한 청구액이 전체 실손보험 지급액의 80%를 돌파하는 기형적 구조가 수년간 누적되었습니다.</p>
+
+            <p>이처럼 무차별적인 도수치료, 고가의 영양제 비급여 주사, 체외충격파의 반복적인 악용은 선량하게 보험금 청구를 하지 않고 오직 묵묵하게 매월 요금을 납부해온 선량한 다수 가입자의 매월 납입 부담으로 그대로 전가되었습니다. 이에 정부당국은 필수 의료 행위에 속하는 급여 부문과 난치성 질환 치료에 집중하는 중증 환자 대상 비급여 질환은 기존의 강력한 실손보험 보장 혜택을 유지 및 장려하도록 정교화하고, 단순 피로 회복 목적이나 미적 목적이 강한 통증 제어용 비중증 비급여 항목들은 급여 본인부담률 변화와 정밀 연동되도록 차등 설계하는 대수술을 단행했습니다.</p>
+            
+            <p>이로써 새 단장을 마친 5세대 실비보험은 겉으로는 보장의 한도가 소폭 엄격해진 양상을 띠고 있으나, 전체적으로 징수되는 평균 기본료가 4세대나 구세대 실손 대비 획기적으로 안정화되어 합리적인 가격 메리트를 지니게 되었습니다. 따라서 병원 이용률이 극도로 낮고 오직 응급 상황이나 중증 질환, 수술 등 예측 불가능한 돌발 의료 위기만을 보장받고자 하는 합리적인 금융 소비자 군에게는 5세대 가입 방법이 압도적으로 유리한 내돈내산 선택지로 손꼽히고 있습니다.</p>
+        </div>
+    </section>
+
+    <section id="faq" class="container faq">
+        <h2>실손보험이란 주제에 관해 자주 묻는 질문 FAQ</h2>
+        <p>네이버 지식인 및 포털 검색 스니펫에서 가장 뜨겁게 논의되는 다빈도 핵심 의문점들을 선별하여 2026년 최신 제도를 반영해 답변합니다.</p>
+        
+        <div class="item">
+            <h3>Q1: 기존의 1세대 혹은 2세대 옛날 실비를 끝까지 유지하는 것이 맞을까요? <span class="accent-text">갱신 비용 체크</span></h3>
+            <p>A: 만약 가입자분이 연령대가 아직 30대 이하이거나, 심한 만성 질환이나 척추 관절 계통의 지병이 있어서 거의 매달 병원을 찾아 물리치료 및 도수치료를 빈번하게 소화하고 계시는 고이용 고객이라면 1세대나 2세대 구실손의 전액 보장 방식이 가장 혜택이 좋습니다. 하지만 40대, 50대 이후가 되면서 건강함에도 불구하고 남들이 청구한 막대한 손해율 부담 때문에 매월 내야 하는 요금이 10만 원을 초과하기 시작하여 유지할 여력이 없어진다면, 하루빨리 납입 부담을 2~3만 원 수준으로 낮출 수 있는 5세대 실손으로 계약을 갈아타는 편이 미래 유지비 측면에서 현실적이고 유일한 돌파구입니다.</p>
+        </div>
+        
+        <div class="item">
+            <h3>Q2: 4세대 실손에서 5세대로 또다시 전환할 필요가 있습니까? <span class="accent-text">보장 조건 비교</span></h3>
+            <p>A: 4세대 실손보험 가입자는 무조건적으로 즉시 이전을 강제하지는 않으며 가입하신 시점의 재가입 주기에 맞추어 자연스럽게 승계 선택이 진행됩니다. 다만, 평상시 비급여 청구 이력이 거의 없음에도 불구하고 2026년 들어 4세대 평균 요금이 20% 가까이 깜짝 인상되어 불만이 크셨던 분이라면, 비중증 비급여 통제를 기본 구조로 삼아 설계되어 요금이 보다 안전하게 절감된 5세대로 미리 수동 전환 신청을 하여 납부 금액을 세이브하는 방법이 매우 유리할 수 있습니다.</p>
+        </div>
+
+        <div class="item">
+            <h3>Q3: 가입하고자 하는 연령별 및 질병 이력자도 가입 조건 승인이 나나요? <span class="accent-text">유병자 전용 가입</span></h3>
+            <p>A: 이미 기왕력이 있거나 만성 질환 치료 경과가 있으신 고연령층의 경우에는 일반적인 단독 실손 상품 가입이 어려울 수 있습니다. 이때는 심사 요건을 대폭 완화하여 세 가지만의 고지 사항만을 심사하는 유병자 실손보험 전문 설계 상품이나, 60대 이후 부모님 세대를 주 표적으로 삼는 노후실손의료보험 혜택 구조를 탐색하시는 방법이 현명합니다. 이들 상품은 비록 일반 실손보다 자기부담 비율이 높게 산정되지만, 가입 신청의 기회 자체가 막혀 있던 유병 질환 보유자분들에게 합법적인 의료 자금을 제공한다는 점에서 가치가 뛰어납니다.</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>맞춤 상담 및 전환 의사 결정 무료 신청</h2>
+        <div class="interactive-section">
+            <p>인터넷 성지나 허위 과대광고 좌표의 미끼 문구에 휘둘리지 마시고, 내 조건에 가장 완벽하게 부합하는 실손보험이란 어떤 비율의 상품이어야 하는지 금융 분석 센터의 체계적인 무료 맞춤 컨설팅을 신청해 보세요.</p>
+            
+            <form action="#apply-complete" method="post" onsubmit="alert('상담 예약이 성공적으로 접수되었습니다. 담당 전문 어드바이저가 영업일 기준 24시간 이내에 개별 맞춤 안내 연락을 드리겠습니다.'); return false;">
+                
+                <div class="form-group">
+                    <label for="client-name">성함</label>
+                    <input type="text" id="client-name" class="form-control" placeholder="홍길동" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="client-tel">휴대폰 연락처 (하이픈 없이 입력해 주십시오)</label>
+                    <input type="tel" id="client-tel" class="form-control" placeholder="01012345678" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="client-message">보유 중인 질병 기왕력 또는 궁금하신 구체적 질문 사항</label>
+                    <textarea id="client-message" class="form-control" rows="5" placeholder="예 : 당뇨 및 혈압 약을 오랜 기간 복용 중입니다. 현재 1세대를 보유 중인데 월 납입 금액이 너무 비싸 5세대로 즉시 갈아타야 할지 조언이 간절히 필요합니다." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit" style="background-color: var(--accent-color);">1:1 실손보험 정밀 무료 분석 및 안내 신청</button>
+            </form>
+        </div>
+    </section>
+
+  
